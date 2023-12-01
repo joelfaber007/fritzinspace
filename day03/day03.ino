@@ -79,8 +79,8 @@ void loop() {
   // Each time loop() begins digitalRead() reads the input pin attached to the switch and
   // compares the value read to HIGH (switch is ON)
   if (digitalRead(CABIN_LIGHTS_SWITCH_PIN) == HIGH) {
-    digitalWrite(CABIN_LIGHTS_PIN, HIGH);  // Switch is ON, turn on our lander's light
+    digitalWrite(CABIN_LIGHTS_PIN, LOW);  // Switch is ON, turn on our lander's light
   } else {
-    digitalWrite(CABIN_LIGHTS_PIN, LOW);  // Switch is OFF, turn off lander's light
+    digitalWrite(CABIN_LIGHTS_PIN, HIGH);  // Switch is OFF, turn off lander's light
   }
 }
