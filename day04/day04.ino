@@ -63,18 +63,13 @@
  * "unsigned char" which are the same as "byte".  We will use the term "byte"
  * in our lessons to indicate 8 bit unsigned integers.
  */
-// #define CABIN_LIGHTS_PIN 10             // pin controlling the cabin lights
-// #define STORAGE_LIGHTS_PIN 11           // pin controlling the storage lights
-// #define COCKPIT_LIGHTS_PIN 12           // pin controlling the exterior lights
 const byte CABIN_LIGHTS_PIN = 10;    // pin controlling the cabin lights
 const byte STORAGE_LIGHTS_PIN = 11;  // pin controlling the storage lights
 const byte COCKPIT_LIGHTS_PIN = 12;  // pin controlling the exterior lights
 
 // We will use a different input pin for each of our DIP switches and
 // we'll label them using the color of the LED that each switch will control.
-// #define CABIN_LIGHTS_SWITCH_PIN 2             // cabin lights controlled by switch 1
-// #define STORAGE_LIGHTS_SWITCH_PIN 3           // storage lights controlled by switch 2
-// #define COCKPIT_LIGHTS_SWITCH_PIN 4           // exterior lights controlled by switch 3
+
 const byte CABIN_LIGHTS_SWITCH_PIN = 2;    // cabin lights controlled by switch 1
 const byte STORAGE_LIGHTS_SWITCH_PIN = 3;  // storage lights controlled by switch 2
 const byte COCKPIT_LIGHTS_SWITCH_PIN = 4;  // exterior lights controlled by switch 3
@@ -96,23 +91,14 @@ void setup() {
 // state appropriately.
 void loop() {
   // Control cabin lights based on setting on switch 1
-  if (digitalRead(CABIN_LIGHTS_SWITCH_PIN) == HIGH) {  // if switch is on (HIGH voltage)
-    digitalWrite(CABIN_LIGHTS_PIN, HIGH);              // turn on LED by providing HIGH voltage (5v)
-  } else {
-    digitalWrite(CABIN_LIGHTS_PIN, LOW);  // turn off LED by setting output to LOW (zero volts)
-  }
+  //if (digitalRead(CABIN_LIGHTS_SWITCH_PIN) == HIGH) {  // if switch is on (HIGH voltage)
+  //  digitalWrite(CABIN_LIGHTS_PIN, HIGH);              // turn on LED by providing HIGH voltage (5v)
+  //} else {
+   // digitalWrite(CABIN_LIGHTS_PIN, LOW);  // turn off LED by setting output to LOW (zero volts)
+  //}
 
-  // Control storage lights based on setting on switch 2
-  if (digitalRead(STORAGE_LIGHTS_SWITCH_PIN) == HIGH) {  // if switch is on (HIGH voltage)
-    digitalWrite(STORAGE_LIGHTS_PIN, HIGH);              // turn on LED by providing HIGH voltage (5v)
-  } else {
-    digitalWrite(STORAGE_LIGHTS_PIN, LOW);  // turn off LED by setting output to LOW (zero volts)
-  }
+  digitalWrite(CABIN_LIGHTS_PIN, digitalRead(CABIN_LIGHTS_SWITCH_PIN));
+  digitalWrite(STORAGE_LIGHTS_PIN, digitalRead(STORAGE_LIGHTS_SWITCH_PIN));
+  digitalWrite(COCKPIT_LIGHTS_PIN, digitalRead(COCKPIT_LIGHTS_SWITCH_PIN));
 
-  // Control exterior lights based on setting on switch 3
-  if (digitalRead(COCKPIT_LIGHTS_SWITCH_PIN) == HIGH) {  // if switch is on (HIGH voltage)
-    digitalWrite(COCKPIT_LIGHTS_PIN, HIGH);              // turn the LED on (HIGH is the voltage level)
-  } else {
-    digitalWrite(COCKPIT_LIGHTS_PIN, LOW);  // turn off LED by setting output to LOW (zero volts)
-  }
 }
