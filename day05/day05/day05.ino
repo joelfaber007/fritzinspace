@@ -149,8 +149,8 @@ if (cats ==3) {
     if (cats ==6) {
     digitalWrite(CABIN_LIGHTS_PIN, HIGH);
     digitalWrite(STORAGE_LIGHTS_PIN, LOW);
-    digitalWrite(COCKPIT_LIGHTS_PIN, LOW);
-    digitalWrite(KITCHEN_LIGHTS_PIN, HIGH);
+    digitalWrite(COCKPIT_LIGHTS_PIN, HIGH);
+    digitalWrite(KITCHEN_LIGHTS_PIN, LOW);
     digitalWrite(BATHROOM_LIGHTS_PIN, LOW);
   }
 
